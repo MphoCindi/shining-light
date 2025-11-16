@@ -1,11 +1,11 @@
 
-import HomePage from './components/home-page/homepage'
+import One from './components/one/one';
 
 function App() {
 
   return (
     <>
-    <HomePage/>
+   <One/>
      </>
   )
 }

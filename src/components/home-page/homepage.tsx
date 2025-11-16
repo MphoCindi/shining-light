@@ -1,7 +1,6 @@
-import React from "react";
-import { buttonStyle, HomePageContainer, LeftContainer , RightContainer} from "./homepage.style";
+import React, { useEffect, useRef, useState } from "react";
+import { ButtonStyle, HomePageContainer, LeftContainer , RightContainer, Text} from "./homepage.style";
 import logo from "../../assets/homepage.png";
-
 
 export const HomePage: React.FC = () => {
 
@@ -9,21 +8,32 @@ export const HomePage: React.FC = () => {
         console.log("I was clicked")
     }
     
+    const leftRef = useRef<HTMLDivElement>(null);
+    const [leftHeight, setLeftHeight] = useState<number>(0);
+
+    useEffect (() => {
+        if ( leftRef.current){
+            setLeftHeight(leftRef.current.offsetHeight)
+        }
+    }, []);
+    
    return (
     <>
-    <div style={HomePageContainer}>
-    <div style={LeftContainer}>
-        <h1>Growing in Faith, Love and Learning</h1>
+    <HomePageContainer>
         
-        <button style={buttonStyle} onClick={learnmore}>
-            Learn More
-        </button>
-    </div>
+    <LeftContainer ref={leftRef}>
 
-    <div style={RightContainer}>
-        <img src={logo} alt="The logo" style={{width: '200px'}} />
-    </div>
-    </div>
+        <Text>Growing in Faith, Love and Learning</Text>
+        
+        <ButtonStyle onClick={learnmore}>
+            Learn More
+        </ButtonStyle>
+    </LeftContainer>
+
+    <RightContainer>
+        <img src={logo} alt="The logo" style={{ height: leftHeight}}/>
+    </RightContainer>
+    </HomePageContainer>
     </>
     );
 };

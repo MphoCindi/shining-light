@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { ButtonStyle, HomePageContainer, LeftContainer , RightContainer, Text} from "./homepage.style";
 import logo from "../../assets/homepage.png";
 
@@ -8,10 +8,6 @@ export const HomePage: React.FC = () => {
         console.log("I was clicked")
     }
     
-    const leftRef = useRef<HTMLDivElement>(null);
-    const [leftHeight, setLeftHeight] = useState<number>(0);
-
-  
     
    return (
     <>

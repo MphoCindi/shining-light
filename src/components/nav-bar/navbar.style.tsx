@@ -8,7 +8,11 @@ export const NavContainer = styled.nav`
   justify-content: space-between;
   height: 80px;
   position: relative;
-  align-items: strech; 
+  align-items: strech;
+  
+  h1 {
+    margin: 0;
+  }
 `;
 
 export const NavTitle = styled.h1`

@@ -11,17 +11,13 @@ export const HomePage: React.FC = () => {
     const leftRef = useRef<HTMLDivElement>(null);
     const [leftHeight, setLeftHeight] = useState<number>(0);
 
-    useEffect (() => {
-        if ( leftRef.current){
-            setLeftHeight(leftRef.current.offsetHeight)
-        }
-    }, []);
+  
     
    return (
     <>
     <HomePageContainer>
         
-    <LeftContainer ref={leftRef}>
+    <LeftContainer >
 
         <Text>Growing in Faith, Love and Learning</Text>
         
@@ -31,7 +27,7 @@ export const HomePage: React.FC = () => {
     </LeftContainer>
 
     <RightContainer>
-        <img src={logo} alt="The logo" style={{ height: leftHeight}}/>
+        <img src={logo} alt="The logo" />
     </RightContainer>
     </HomePageContainer>
     </>
